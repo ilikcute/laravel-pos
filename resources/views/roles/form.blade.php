@@ -21,7 +21,7 @@
                 <h6 class="m-0 font-weight-bold text-primary">{{ $data['title'] }} Data</h6>
             </div>
             <div class="card-body">
-                <form action="{{ $data['role'] ? '/dashboard/roles/' . $data['role']->id : '/dashboard/roles' }}"
+                <form action="{{ isset($data['role']->id) ? '/dashboard/roles/' . $data['role']->id : '/dashboard/roles' }}"
                     method="POST">
                     @csrf
                     @if (!empty($data['role']->id))
